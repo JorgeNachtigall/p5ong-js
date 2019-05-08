@@ -1,14 +1,11 @@
-let width = 600;
-let height = 400;
-let backgroundColor = 220;
-let ball, player;
-
 function setup() {
-    ball = new Ball();
-    createCanvas(width, height);
+    pong = new Pong(600, 400, 220, new Ball());
+    pong.ball.position.x = 100;
+    pong.ball.position.y = 50;
+    createCanvas(pong.width, pong.height);
 }
 
 function draw() {
-    background(backgroundColor);
-    ball.draw();
+    background(pong.backgroundColor);
+    pong.draw();
 }
