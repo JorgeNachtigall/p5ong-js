@@ -1,22 +1,13 @@
-class Player {
-    constructor(w, h) {
-        this.position = createVector();
-        this.size = createVector(w, h);
+class Player extends Rect {
+    constructor(x, y, color) {
+        super(20, 100);
+        this.position.x = x;
+        this.position.y = y;
+        this.color = color;
+        this.score = 0;
     }
-
-    get left() {
-        return this.position.x;
-    }
-
-    get right() {
-        return this.position.x + this.size.x;
-    }
-
-    get top() {
-        return this.position.y;
-    }
-
-    get bottom() {
-        return this.position.y + this.size.y;
+    draw() {
+        fill(this.color);
+        rect(this.left, this.top, this.size.x, this.size.y);
     }
 }
